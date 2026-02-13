@@ -84,10 +84,16 @@ Response:
   "ticker": "AAPL",
   "signal": "BUY",
   "confidence": 80,
-  "reasoning": "Strong BUY signal: RSI at 28.5 (oversold), MACD bullish crossover detected",
+  "reasoning": "Strong BUY signal: RSI at 28.5 (oversold), MACD bullish crossover detected, price above 50-day SMA ($175.20 > $172.50)",
   "timestamp": "2026-02-13T14:30:00Z",
+  "data_freshness": "2026-02-13T14:15:00Z",
   "current_price": 175.20,
-  "indicators": { ... }
+  "indicators": {
+    "rsi": 28.5,
+    "macd": { "line": 1.25, "signal": 0.95, "histogram": 0.30 },
+    "sma": { "20_day": 170.50, "50_day": 172.50, "200_day": 165.00 },
+    "ema": { "12_day": 173.80, "26_day": 171.20 }
+  }
 }
 ```
 
@@ -97,6 +103,21 @@ Returns calculated technical indicators without generating a signal.
 
 ```bash
 curl http://localhost:8000/indicators/AAPL
+```
+
+Response:
+```json
+{
+  "ticker": "AAPL",
+  "calculated_at": "2026-02-13T14:30:00Z",
+  "current_price": 175.20,
+  "indicators": {
+    "rsi": 28.5,
+    "macd": { "line": 1.25, "signal": 0.95, "histogram": 0.30 },
+    "sma": { "20_day": 170.50, "50_day": 172.50, "200_day": 165.00 },
+    "ema": { "12_day": 173.80, "26_day": 171.20 }
+  }
+}
 ```
 
 ### `/health` - Health Check
@@ -120,12 +141,27 @@ curl http://localhost:8000/health
 
 ```
 app/
-├── main.py              # FastAPI application entry point
-├── config.py            # Configuration settings
-├── models/              # Pydantic models
-├── services/            # Business logic
-├── api/routes/          # API endpoints
-└── utils/               # Utilities and validators
+├── main.py              # FastAPI app, CORS, response-time middleware
+├── config.py            # Pydantic settings (cache, indicators, thresholds)
+├── models/
+│   ├── stock.py         # Stock, PriceData, Exchange
+│   ├── indicator.py     # Indicators, MACD, SMA, EMA, IndicatorResponse
+│   └── signal.py        # Signal, SignalAction
+├── services/
+│   ├── cache_service.py         # TTLCache with hit/miss stats
+│   ├── data_fetcher.py          # yfinance async wrapper with retry
+│   ├── indicator_calculator.py  # pandas-ta RSI/MACD/SMA/EMA
+│   └── signal_generator.py      # Rule-based scoring + reasoning
+├── api/
+│   ├── routes/
+│   │   ├── health.py      # GET /health
+│   │   ├── signals.py     # GET /signal/{ticker}
+│   │   └── indicators.py  # GET /indicators/{ticker}
+│   ├── dependencies.py    # DI singletons
+│   └── errors.py          # Custom exceptions + handlers
+└── utils/
+    ├── validators.py      # Ticker validation
+    └── logging.py         # JSON structured logging
 
 tests/
 ├── unit/                # Unit tests
