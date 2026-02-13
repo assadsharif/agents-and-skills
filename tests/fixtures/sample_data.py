@@ -37,23 +37,27 @@ def make_ohlcv(
     low = np.minimum(open_, close) * (1 - rng.uniform(0.001, 0.015, days))
     volume = rng.integers(1_000_000, 50_000_000, size=days)
 
-    dates = pd.bdate_range(end=pd.Timestamp.today(), periods=days)
+    dates = pd.date_range(end=pd.Timestamp.today(), periods=days, freq="B")
+
+    # Ensure array length matches index length (business days may differ)
+    n = len(dates)
 
     return pd.DataFrame(
         {
-            "Open": np.round(open_, 2),
-            "High": np.round(high, 2),
-            "Low": np.round(low, 2),
-            "Close": np.round(close, 2),
-            "Volume": volume,
+            "Open": np.round(open_[:n], 2),
+            "High": np.round(high[:n], 2),
+            "Low": np.round(low[:n], 2),
+            "Close": np.round(close[:n], 2),
+            "Volume": volume[:n],
         },
         index=dates,
     )
 
 
 # Pre-built fixtures for common test scenarios
-BULLISH_200D = make_ohlcv(200, 150.0, "bullish", seed=1)
-BEARISH_200D = make_ohlcv(200, 150.0, "bearish", seed=2)
-NEUTRAL_200D = make_ohlcv(200, 150.0, "neutral", seed=3)
-SHORT_50D = make_ohlcv(50, 100.0, "neutral", seed=4)
+# Use extra days to compensate for business-day truncation in date_range(freq='B')
+BULLISH_200D = make_ohlcv(210, 150.0, "bullish", seed=1)
+BEARISH_200D = make_ohlcv(210, 150.0, "bearish", seed=2)
+NEUTRAL_200D = make_ohlcv(210, 150.0, "neutral", seed=3)
+SHORT_50D = make_ohlcv(55, 100.0, "neutral", seed=4)
 MINIMAL_15D = make_ohlcv(15, 100.0, "neutral", seed=5)
