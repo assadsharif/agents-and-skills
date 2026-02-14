@@ -53,17 +53,17 @@
 
 ### Implementation for User Story 1
 
-- [ ] T015 [P] [US1] Create app/models/stock.py with Stock Pydantic model (ticker, company_name, exchange, current_price)
-- [ ] T016 [P] [US1] Create app/models/indicator.py with TechnicalIndicator Pydantic model (ticker, calculated_at, rsi, macd_line, macd_signal, macd_histogram, sma_20, sma_50, sma_200, ema_12, ema_26)
-- [ ] T017 [P] [US1] Create app/models/signal.py with Signal and SignalAction Pydantic models per data-model.md
-- [ ] T018 [US1] Implement app/services/indicator_calculator.py with IndicatorCalculator class using pandas-ta for RSI, MACD, SMA, EMA calculations
-- [ ] T019 [US1] Implement app/services/signal_generator.py with SignalGenerator class implementing rule-based scoring algorithm from research.md (BUY: score >= +2, SELL: score <= -2, HOLD: -1 to +1)
-- [ ] T020 [US1] Create app/api/routes/signals.py with GET /signal/{ticker} endpoint implementation per openapi.yaml
-- [ ] T021 [US1] Integrate cache_service.py with signals.py for 15-minute TTL caching of signal responses
-- [ ] T022 [US1] Add error handling for invalid ticker (400), ticker not found (404), data source unavailable (503) in signals.py
-- [ ] T023 [US1] Add graceful degradation for insufficient historical data (new IPO) - return partial indicators with null values
-- [ ] T024 [US1] Register signals router in app/main.py
-- [ ] T025 [US1] Verify /signal/AAPL endpoint returns valid signal with all required fields per openapi.yaml schema
+- [x] T015 [P] [US1] Create app/models/stock.py with Stock Pydantic model (ticker, company_name, exchange, current_price)
+- [x] T016 [P] [US1] Create app/models/indicator.py with TechnicalIndicator Pydantic model (ticker, calculated_at, rsi, macd_line, macd_signal, macd_histogram, sma_20, sma_50, sma_200, ema_12, ema_26)
+- [x] T017 [P] [US1] Create app/models/signal.py with Signal and SignalAction Pydantic models per data-model.md
+- [x] T018 [US1] Implement app/services/indicator_calculator.py with IndicatorCalculator class using pandas-ta for RSI, MACD, SMA, EMA calculations
+- [x] T019 [US1] Implement app/services/signal_generator.py with SignalGenerator class implementing rule-based scoring algorithm from research.md (BUY: score >= +2, SELL: score <= -2, HOLD: -1 to +1)
+- [x] T020 [US1] Create app/api/routes/signals.py with GET /signal/{ticker} endpoint implementation per openapi.yaml
+- [x] T021 [US1] Integrate cache_service.py with signals.py for 15-minute TTL caching of signal responses
+- [x] T022 [US1] Add error handling for invalid ticker (400), ticker not found (404), data source unavailable (503) in signals.py
+- [x] T023 [US1] Add graceful degradation for insufficient historical data (new IPO) - return partial indicators with null values
+- [x] T024 [US1] Register signals router in app/main.py
+- [x] T025 [US1] Verify /signal/AAPL endpoint returns valid signal with all required fields per openapi.yaml schema
 
 **Checkpoint**: At this point, User Story 1 should be fully functional - traders can get trading signals for stocks
 
@@ -77,13 +77,13 @@
 
 ### Implementation for User Story 2
 
-- [ ] T026 [US2] Create app/models/__init__.py to export IndicatorResponse model (reuses TechnicalIndicator from US1)
-- [ ] T027 [US2] Create app/api/routes/indicators.py with GET /indicators/{ticker} endpoint implementation per openapi.yaml
-- [ ] T028 [US2] Reuse IndicatorCalculator from US1 (app/services/indicator_calculator.py) in indicators.py endpoint
-- [ ] T029 [US2] Integrate cache_service.py with indicators.py for caching indicator responses
-- [ ] T030 [US2] Add error handling for invalid ticker (400), ticker not found (404), data source unavailable (503) in indicators.py
-- [ ] T031 [US2] Register indicators router in app/main.py
-- [ ] T032 [US2] Verify /indicators/AAPL endpoint returns all indicator types per openapi.yaml schema
+- [x] T026 [US2] Create app/models/__init__.py to export IndicatorResponse model (reuses TechnicalIndicator from US1)
+- [x] T027 [US2] Create app/api/routes/indicators.py with GET /indicators/{ticker} endpoint implementation per openapi.yaml
+- [x] T028 [US2] Reuse IndicatorCalculator from US1 (app/services/indicator_calculator.py) in indicators.py endpoint
+- [x] T029 [US2] Integrate cache_service.py with indicators.py for caching indicator responses
+- [x] T030 [US2] Add error handling for invalid ticker (400), ticker not found (404), data source unavailable (503) in indicators.py
+- [x] T031 [US2] Register indicators router in app/main.py
+- [x] T032 [US2] Verify /indicators/AAPL endpoint returns all indicator types per openapi.yaml schema
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently - traders can view signals and underlying indicators
 
@@ -97,14 +97,14 @@
 
 ### Implementation for User Story 3
 
-- [ ] T033 [US3] Enhance app/services/signal_generator.py with reasoning generation logic that explains which indicators triggered the signal
-- [ ] T034 [US3] Implement reasoning templates for BUY signals (e.g., "Strong BUY signal: RSI at {value} (oversold), MACD bullish crossover detected, price above 50-day SMA")
-- [ ] T035 [US3] Implement reasoning templates for SELL signals (e.g., "SELL signal: RSI at {value} (overbought), price below 200-day SMA")
-- [ ] T036 [US3] Implement reasoning templates for HOLD signals (e.g., "HOLD signal: Mixed indicators - RSI neutral at {value}, MACD shows no clear trend")
-- [ ] T037 [US3] Add logic to include specific numerical values from indicators in reasoning text
-- [ ] T038 [US3] Add logic to reference at least 2 indicators in reasoning (per SC-006: 90% of signals should reference 2+ indicators)
-- [ ] T039 [US3] Handle edge case reasoning for insufficient data scenarios (e.g., "Limited data (only 50 days available). RSI at {value}, unable to assess long-term trend")
-- [ ] T040 [US3] Verify all /signal/{ticker} responses include reasoning field with 20-500 characters per openapi.yaml validation
+- [x] T033 [US3] Enhance app/services/signal_generator.py with reasoning generation logic that explains which indicators triggered the signal
+- [x] T034 [US3] Implement reasoning templates for BUY signals (e.g., "Strong BUY signal: RSI at {value} (oversold), MACD bullish crossover detected, price above 50-day SMA")
+- [x] T035 [US3] Implement reasoning templates for SELL signals (e.g., "SELL signal: RSI at {value} (overbought), price below 200-day SMA")
+- [x] T036 [US3] Implement reasoning templates for HOLD signals (e.g., "HOLD signal: Mixed indicators - RSI neutral at {value}, MACD shows no clear trend")
+- [x] T037 [US3] Add logic to include specific numerical values from indicators in reasoning text
+- [x] T038 [US3] Add logic to reference at least 2 indicators in reasoning (per SC-006: 90% of signals should reference 2+ indicators)
+- [x] T039 [US3] Handle edge case reasoning for insufficient data scenarios (e.g., "Limited data (only 50 days available). RSI at {value}, unable to assess long-term trend")
+- [x] T040 [US3] Verify all /signal/{ticker} responses include reasoning field with 20-500 characters per openapi.yaml validation
 
 **Checkpoint**: All user stories should now be independently functional - signals include educational reasoning
 
@@ -114,16 +114,16 @@
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T041 [P] Add structured logging (JSON format) for errors, data source calls, cache hits/misses in all service files
-- [ ] T042 [P] Add response time metrics tracking in app/main.py middleware
-- [ ] T043 [P] Verify OpenAPI documentation is accessible at /docs endpoint with all three endpoints documented
-- [ ] T044 [P] Create tests/fixtures/sample_data.py with mock price data for testing
-- [ ] T045 Update README.md with final setup instructions and API usage examples from quickstart.md
-- [ ] T046 Validate all endpoints against openapi.yaml schema compliance
-- [ ] T047 Run manual test checklist from quickstart.md and verify all items pass
-- [ ] T048 Performance validation: Test that cached requests respond in <100ms (target: <2s, actual should be much better)
-- [ ] T049 Performance validation: Run load test with 100 requests to verify system handles target throughput
-- [ ] T050 Security review: Verify ticker validation prevents injection attacks and all user inputs are validated
+- [x] T041 [P] Add structured logging (JSON format) for errors, data source calls, cache hits/misses in all service files
+- [x] T042 [P] Add response time metrics tracking in app/main.py middleware
+- [x] T043 [P] Verify OpenAPI documentation is accessible at /docs endpoint with all three endpoints documented
+- [x] T044 [P] Create tests/fixtures/sample_data.py with mock price data for testing
+- [x] T045 Update README.md with final setup instructions and API usage examples from quickstart.md
+- [x] T046 Validate all endpoints against openapi.yaml schema compliance
+- [x] T047 Run manual test checklist from quickstart.md and verify all items pass
+- [x] T048 Performance validation: Test that cached requests respond in <100ms (target: <2s, actual should be much better)
+- [x] T049 Performance validation: Run load test with 100 requests to verify system handles target throughput
+- [x] T050 Security review: Verify ticker validation prevents injection attacks and all user inputs are validated
 
 ---
 

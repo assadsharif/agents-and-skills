@@ -5,9 +5,12 @@ In-memory TTL cache using cachetools for storing signal and indicator results.
 LRU eviction when capacity is reached. 15-minute TTL by default.
 """
 
+import logging
 from typing import Any
 
 from cachetools import TTLCache
+
+logger = logging.getLogger("app.services.cache")
 
 
 class CacheService:
@@ -23,13 +26,16 @@ class CacheService:
         value = self._cache.get(key)
         if value is not None:
             self._hits += 1
+            logger.debug("Cache HIT", extra={"cache_key": key, "cache_hit": True})
         else:
             self._misses += 1
+            logger.debug("Cache MISS", extra={"cache_key": key, "cache_hit": False})
         return value
 
     def set(self, key: str, value: Any) -> None:
         """Store a value in cache."""
         self._cache[key] = value
+        logger.debug("Cache SET", extra={"cache_key": key})
 
     def has(self, key: str) -> bool:
         """Check if a key exists in cache (without affecting hit/miss stats)."""

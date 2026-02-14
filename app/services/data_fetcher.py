@@ -15,7 +15,7 @@ import yfinance as yf
 
 from ..api.errors import DataSourceUnavailableError, TickerNotFoundError
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("app.services.data_fetcher")
 
 
 class DataFetcher:
@@ -75,6 +75,12 @@ class DataFetcher:
                     self.max_retries,
                     ticker,
                     exc,
+                    extra={
+                        "ticker": ticker,
+                        "data_source": "yahoo_finance",
+                        "attempt": attempt,
+                        "error": str(exc),
+                    },
                 )
                 if attempt < self.max_retries:
                     await asyncio.sleep(delay)
