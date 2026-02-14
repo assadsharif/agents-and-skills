@@ -95,6 +95,18 @@
     "venv_manager_mcp": {
       "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
       "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/venv_manager_mcp.py"]
+    },
+    "prompt_engineer_mcp": {
+      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
+      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/prompt_engineer_mcp.py"]
+    },
+    "pandas_mcp": {
+      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
+      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/pandas_mcp.py"]
+    },
+    "django_mcp": {
+      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
+      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/django_mcp.py"]
     }
   }
 }
