@@ -7,7 +7,7 @@ Calculates RSI, MACD, SMA, and EMA from historical price data using pandas-ta.
 import logging
 
 import pandas as pd
-import pandas_ta as ta
+import pandas_ta_classic as ta
 
 from ..config import settings
 from ..models.indicator import (
