@@ -8,8 +8,12 @@ routers, and error handlers.
 import logging
 import time
 
+from pathlib import Path
+
 from fastapi import FastAPI, Request, Response
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 
 from app.api.errors import register_error_handlers
 from app.api.routes.admin import router as admin_router
@@ -96,11 +100,19 @@ app.include_router(portfolio_router)
 app.include_router(alerts_router)
 app.include_router(webhooks_router)
 
+# Serve static dashboard
+_static_dir = Path(__file__).resolve().parent.parent / "static"
+if _static_dir.is_dir():
+    app.mount("/static", StaticFiles(directory=str(_static_dir)), name="static")
 
-# Root endpoint
-@app.get("/", tags=["root"])
-async def root() -> dict[str, str]:
-    """Root endpoint - API information."""
+
+# Root endpoint — serve dashboard HTML
+@app.get("/", tags=["root"], include_in_schema=False)
+async def root():
+    """Serve the dashboard UI."""
+    index = _static_dir / "index.html"
+    if index.exists():
+        return FileResponse(str(index))
     return {
         "name": APP_TITLE,
         "version": APP_VERSION,
