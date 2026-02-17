@@ -1,55 +1,50 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# SDD Toolkit Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Spec-Driven Development
+Every feature MUST begin with a specification (`spec.md`) before any code is written. Specifications define requirements, acceptance criteria, and scope boundaries. No implementation work proceeds without an approved spec.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Test-First (NON-NEGOTIABLE)
+TDD is mandatory for all implementation work. Tests written first, approved by user, confirmed to fail (red), then implementation to pass (green), then refactor. Red-Green-Refactor cycle strictly enforced.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Smallest Viable Diff
+Every change MUST be the minimum necessary to satisfy the requirement. No speculative features, no unrelated refactoring, no premature abstractions. Three similar lines of code is better than a premature helper.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Traceability
+All work MUST be traceable: specs link to plans, plans link to tasks, tasks link to commits, and Prompt History Records (PHRs) capture every significant interaction. Architecture Decision Records (ADRs) document significant decisions.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Security by Default
+Never hardcode secrets or tokens; use environment variables and `.env` files. Validate at system boundaries. Follow OWASP top 10 guidelines. Secrets files (`.env`, credentials) MUST be gitignored.
 
-### [PRINCIPLE_6_NAME]
+### VI. Simplicity (YAGNI)
+Start simple. Do not design for hypothetical future requirements. Only add complexity when current requirements demand it. Prefer explicit over clever. Prefer readable over compact.
 
+## Quality Gates
 
-[PRINCIPLE__DESCRIPTION]
+- All specs MUST have measurable acceptance criteria
+- All plans MUST reference the spec they implement
+- All tasks MUST be independently testable
+- All code changes MUST pass existing tests before merge
+- All PRs MUST reference the originating task or spec
+- Constitution violations are CRITICAL and block implementation
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Development Workflow
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+1. **Specify** (`/sp.specify`): Create feature spec from natural language
+2. **Plan** (`/sp.plan`): Generate architecture and implementation plan
+3. **Tasks** (`/sp.tasks`): Break plan into ordered, testable tasks
+4. **Implement** (`/sp.implement`): Execute tasks with TDD
+5. **Review** (`/sp.git.commit_pr`): Commit and create PR
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+Each stage validates against the previous. Skipping stages requires explicit user consent.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+- This constitution supersedes all other development practices within its scope
+- Amendments require explicit documentation and user approval
+- All PRs and reviews MUST verify compliance with these principles
+- Complexity MUST be justified against the Simplicity principle
+- See `CLAUDE.md` for runtime development guidance
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-02-17 | **Last Amended**: 2026-02-17

@@ -19,8 +19,8 @@ The **ChatKit MCP Server** provides design-time intelligence for building cross-
 ## What is ChatKit?
 
 ChatKit is a unified chat widget architecture that integrates:
-1. **RAG Chatbot** - Document-grounded Q&A (`.claude/skills/rag-chatbot/`)
-2. **Signup & Personalization** - User onboarding flows (`.claude/skills/signup-personalization/`)
+1. **RAG Chatbot** - Document-grounded Q&A
+2. **Signup & Personalization** - User onboarding flows
 3. **Authentication** - OAuth and session management (`.claude/mcp/better-auth/`)
 4. **Future Extensions** - Voice, image, code execution, collaboration
 
@@ -261,7 +261,7 @@ MCP Server: {
 
 ## Supported Patterns
 
-This MCP server validates designs against **6 reusable patterns** (documented in `.claude/skills/chatkit-widget/patterns.md`):
+This MCP server validates designs against **6 reusable patterns**:
 
 1. **Event-Driven Widget Architecture**
 2. **Progressive Widget Loading**
@@ -501,12 +501,6 @@ When working on chat widget design tasks, AI agents query this MCP server to:
 ### Skills
 
 - **ChatKit Widget Skill**: `.claude/skills/chatkit-widget/SKILL.md`
-- **RAG Chatbot Skill**: `.claude/skills/rag-chatbot/SKILL.md`
-- **Signup-Personalization Skill**: `.claude/skills/signup-personalization/SKILL.md`
-
-### Agents
-
-- **RAG Orchestration Subagent**: `.claude/agents/rag-orchestration/AGENT.md`
 
 ### MCP Servers
 
@@ -551,9 +545,6 @@ When working on chat widget design tasks, AI agents query this MCP server to:
 ### Internal Documentation
 
 - **ChatKit Widget Skill**: `.claude/skills/chatkit-widget/SKILL.md`
-- **ChatKit Patterns**: `.claude/skills/chatkit-widget/patterns.md`
-- **RAG Chatbot Patterns**: `.claude/skills/rag-chatbot/patterns.md`
-- **Signup-Personalization Patterns**: `.claude/skills/signup-personalization/patterns.md`
 - **Better-Auth MCP**: `.claude/mcp/better-auth/README.md`
 
 ### External Resources

@@ -151,7 +151,6 @@ The Better-Auth MCP Server provides design-time intelligence for authentication 
 ## Integration Points
 
 ### Skills
-- `.claude/skills/signup-personalization/` (Progressive Enhancement Signup Pattern)
 - `.claude/skills/chatkit-widget/` (Session Continuity Pattern)
 
 ### Agents

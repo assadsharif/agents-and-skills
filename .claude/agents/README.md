@@ -79,7 +79,6 @@ This directory contains autonomous sub-agents for various development workflows.
 
 - **github-workflow** - Complex GitHub operations
 - **mcp** - MCP server integrations
-- **rag-orchestration** - RAG and document processing
 - **testing-validation** - Testing and validation workflows
 
 ## Usage
