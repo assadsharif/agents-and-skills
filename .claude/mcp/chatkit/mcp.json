@@ -30,13 +30,6 @@
     "Healthcare (symptom checkers, patient portals)"
   ],
   "integrations": {
-    "skills": [
-      "rag-chatbot",
-      "signup-personalization"
-    ],
-    "agents": [
-      "rag-orchestration"
-    ],
     "mcp_servers": [
       "better-auth"
     ]

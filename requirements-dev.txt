@@ -1,0 +1,24 @@
+# Development and testing dependencies for SDD toolkit
+
+# Core dependencies (install these first)
+-r requirements.txt
+
+# Testing
+pytest>=8.0.0                # Testing framework
+pytest-asyncio>=0.23.0       # Async test support
+pytest-cov>=4.1.0            # Coverage reporting
+pytest-mock>=3.12.0          # Mocking utilities
+
+# Code Quality
+black>=24.0.0                # Code formatter
+ruff>=0.1.0                  # Fast Python linter
+mypy>=1.8.0                  # Static type checker
+
+# Development Tools
+ipython>=8.20.0              # Enhanced REPL
+ipdb>=0.13.0                 # Debugger
+pre-commit>=3.6.0            # Git hooks framework
+
+# Documentation
+mkdocs>=1.5.0                # Documentation generator
+mkdocs-material>=9.5.0       # Material theme for MkDocs

@@ -46,7 +46,7 @@ Autonomous agent for Git workflows using the Spec-Driven Development (SDD) metho
 5. Draft commit message following convention:
    - <type>(<scope>): <subject>
    - Optional body with details
-   - Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+   - Co-Authored-By: Claude <noreply@anthropic.com>
 6. Stage relevant files (avoid secrets, large binaries)
 7. Create commit with formatted message
 8. Run git status after commit to verify
@@ -184,7 +184,7 @@ Autonomous agent for Git workflows using the Spec-Driven Development (SDD) metho
 
 <body>
 
-Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+Co-Authored-By: Claude <noreply@anthropic.com>
 ```
 
 **Types:**
@@ -203,7 +203,7 @@ Implement OAuth2 authentication flow supporting Google and GitHub
 providers. Users can now log in using their social accounts instead
 of creating new credentials.
 
-Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+Co-Authored-By: Claude <noreply@anthropic.com>
 ```
 
 ```bash
@@ -212,7 +212,7 @@ fix(auth): prevent duplicate email registration
 Add unique constraint check before creating user accounts to prevent
 race condition where duplicate emails could be registered simultaneously.
 
-Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+Co-Authored-By: Claude <noreply@anthropic.com>
 ```
 
 ---
@@ -398,7 +398,7 @@ Create commit without sensitive files
 
    User Story 1 (Registration) and User Story 2 (Login) complete.
 
-   Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+   Co-Authored-By: Claude <noreply@anthropic.com>
    ```
 
 6. Stage files (specific, not "git add ."):
@@ -425,7 +425,7 @@ Create commit without sensitive files
 
    User Story 1 (Registration) and User Story 2 (Login) complete.
 
-   Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>
+   Co-Authored-By: Claude <noreply@anthropic.com>
    EOF
    )"
    ```

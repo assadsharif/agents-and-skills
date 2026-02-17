@@ -31,11 +31,11 @@ tests:
 
 ## Outcome
 
-- ✅ Impact: {{OUTCOME_IMPACT}}
-- 🧪 Tests: {{TESTS_SUMMARY}}
-- 📁 Files: {{FILES_SUMMARY}}
-- 🔁 Next prompts: {{NEXT_PROMPTS}}
-- 🧠 Reflection: {{REFLECTION_NOTE}}
+- Impact: {{OUTCOME_IMPACT}}
+- Tests: {{TESTS_SUMMARY}}
+- Files: {{FILES_SUMMARY}}
+- Next prompts: {{NEXT_PROMPTS}}
+- Reflection: {{REFLECTION_NOTE}}
 
 ## Evaluation notes (flywheel)
 
