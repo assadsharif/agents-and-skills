@@ -244,7 +244,7 @@ get_file_info({ path: "/project/large-file.json" })
 
 **Absolute paths (recommended):**
 ```
-/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/specs/spec.md
+.//specs/spec.md
 ```
 
 **Relative paths (from allowed directory):**
@@ -257,7 +257,7 @@ specs/spec.md
 
 All paths are validated against the allowed directory:
 ```
-/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0
+./
 ```
 
 **Blocked attempts:**

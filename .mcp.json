@@ -1,112 +1,159 @@
 {
   "mcpServers": {
     "tdd_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/tdd_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/tdd_mcp.py"],
+      "description": "Test-Driven Development guidance and test generation"
     },
     "docker_containerization_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/docker_containerization_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/docker_containerization_mcp.py"],
+      "description": "Docker containerization and Dockerfile generation"
     },
     "fastapi_backend_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/fastapi_backend_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/fastapi_backend_mcp.py"],
+      "description": "FastAPI backend scaffolding and best practices"
     },
     "web_content_fetch_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/web_content_fetch_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/web_content_fetch_mcp.py"],
+      "description": "Web content fetching and extraction"
     },
     "sqlmodel_orm_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/sqlmodel_orm_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/sqlmodel_orm_mcp.py"],
+      "description": "SQLModel ORM patterns and database modeling"
     },
     "nextjs_app_router_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/nextjs_app_router_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/nextjs_app_router_mcp.py"],
+      "description": "Next.js App Router patterns and components"
     },
     "helm_packaging_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/helm_packaging_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/helm_packaging_mcp.py"],
+      "description": "Helm chart packaging for Kubernetes"
     },
     "kubectl_ai_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/kubectl_ai_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/kubectl_ai_mcp.py"],
+      "description": "Kubernetes kubectl AI-assisted operations"
     },
     "minikube_cluster_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/minikube_cluster_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/minikube_cluster_mcp.py"],
+      "description": "Minikube local cluster management"
     },
     "kagent_analysis_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/kagent_analysis_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/kagent_analysis_mcp.py"],
+      "description": "Kubernetes agent analysis tools"
     },
     "neon_db_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/neon_db_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/neon_db_mcp.py"],
+      "description": "Neon serverless PostgreSQL operations"
     },
     "token_warden_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/token_warden_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/token_warden_mcp.py"],
+      "description": "Token management and security"
     },
     "openai_agents_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/openai_agents_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/openai_agents_mcp.py"],
+      "description": "OpenAI Agents SDK integration"
     },
     "openai_chatkit_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/openai_chatkit_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/openai_chatkit_mcp.py"],
+      "description": "OpenAI ChatKit UI components"
     },
     "pdf_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/pdf_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/pdf_mcp.py"],
+      "description": "PDF generation and manipulation"
     },
     "pptx_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/pptx_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/pptx_mcp.py"],
+      "description": "PowerPoint presentation generation"
     },
     "frontend_design_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/frontend_design_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/frontend_design_mcp.py"],
+      "description": "Frontend design system and UI patterns"
     },
     "theme_factory_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/theme_factory_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/theme_factory_mcp.py"],
+      "description": "Theme generation and design tokens"
     },
     "webapp_testing_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/webapp_testing_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/webapp_testing_mcp.py"],
+      "description": "Web application testing strategies"
     },
     "web_artifacts_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/web_artifacts_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/web_artifacts_mcp.py"],
+      "description": "Web artifact generation and management"
     },
     "interview_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/interview_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/interview_mcp.py"],
+      "description": "Technical interview preparation"
     },
     "quality_enforcer_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/quality_enforcer_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/quality_enforcer_mcp.py"],
+      "description": "Code quality enforcement and review"
     },
     "k8s_deployment_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/k8s_deployment_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/k8s_deployment_mcp.py"],
+      "description": "Kubernetes deployment manifests and strategies"
     },
     "venv_manager_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/venv_manager_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/venv_manager_mcp.py"],
+      "description": "Python virtual environment management"
     },
     "prompt_engineer_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/prompt_engineer_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/prompt_engineer_mcp.py"],
+      "description": "Prompt engineering patterns and optimization"
     },
     "pandas_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/pandas_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/pandas_mcp.py"],
+      "description": "Pandas data analysis and manipulation"
     },
     "django_mcp": {
-      "command": "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/.venv/bin/python",
-      "args": ["/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0/src/mcp_servers/django_mcp.py"]
+      "command": "python",
+      "args": ["src/mcp_servers/django_mcp.py"],
+      "description": "Django web framework patterns and scaffolding"
+    },
+    "linkedin_mcp": {
+      "command": "python",
+      "args": ["src/mcp_servers/linkedin_mcp.py"],
+      "description": "LinkedIn integration and content"
+    },
+    "meta_social_mcp": {
+      "command": "python",
+      "args": ["src/mcp_servers/meta_social_mcp.py"],
+      "description": "Meta social platform integration"
+    },
+    "twitter_mcp": {
+      "command": "python",
+      "args": ["src/mcp_servers/twitter_mcp.py"],
+      "description": "Twitter/X platform integration"
+    },
+    "xero_accounting_mcp": {
+      "command": "python",
+      "args": ["src/mcp_servers/xero_accounting_mcp.py"],
+      "description": "Xero accounting integration"
     }
   }
 }

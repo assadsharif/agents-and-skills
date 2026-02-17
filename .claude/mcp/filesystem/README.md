@@ -12,7 +12,7 @@ The Filesystem MCP server provides Claude with secure read/write access to your 
 
 - **Type:** stdio MCP Server
 - **Package:** `@modelcontextprotocol/server-filesystem`
-- **Allowed Directory:** `/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0`
+- **Allowed Directory:** `./`
 - **Status:** Active
 
 ## 🛠️ Available Tools
@@ -61,7 +61,7 @@ The Filesystem MCP server provides Claude with secure read/write access to your 
 ## 🔐 Security Configuration
 
 **Allowed Directory:**
-- `/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0`
+- `./`
 
 **Security Features:**
 - All file paths are validated against the allowed directory
@@ -80,7 +80,7 @@ The Filesystem MCP server is configured in `~/.claude.json`:
     "command": "npx",
     "args": [
       "@modelcontextprotocol/server-filesystem",
-      "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0"
+      "./"
     ],
     "env": {}
   }

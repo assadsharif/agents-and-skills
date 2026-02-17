@@ -132,7 +132,7 @@ File operation request received
 
 All operations are confined to the configured allowed directory:
 ```
-/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0
+./
 ```
 
 ### Security Features
@@ -275,7 +275,7 @@ For detailed MCP server documentation, see:
 
 **Cause:** Attempting to access files outside project directory
 
-**Fix:** Ensure all paths are within `/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0`
+**Fix:** Ensure all paths are within `./`
 
 ### Issue: "ENOENT: no such file or directory"
 

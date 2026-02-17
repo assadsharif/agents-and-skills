@@ -12,7 +12,7 @@ The Git MCP server provides Claude with direct access to Git operations in your 
 
 - **Type:** stdio MCP Server
 - **Package:** `@modelcontextprotocol/server-git`
-- **Repository:** `/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0`
+- **Repository:** `./`
 - **Status:** Active
 
 ## 🛠️ Available Tools
@@ -75,7 +75,7 @@ The Git MCP server provides Claude with direct access to Git operations in your 
 ## 🔐 Security Configuration
 
 **Repository Path:**
-- `/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0`
+- `./`
 
 **Security Features:**
 - Only operates within the configured repository
@@ -95,7 +95,7 @@ The Git MCP server is configured in `~/.claude.json`:
     "args": [
       "@modelcontextprotocol/server-git",
       "--repository",
-      "/mnt/c/Users/HomePC/Desktop/CODE/Personal AI Employee Hackathon 0"
+      "./"
     ],
     "env": {}
   }

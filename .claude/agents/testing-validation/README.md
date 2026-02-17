@@ -1,146 +1,119 @@
 # Testing Validation Agent
 
-Autonomous agent for comprehensive Docusaurus site testing and validation.
+Autonomous agent for comprehensive project testing and validation. Auto-detects project type and runs appropriate test workflows.
 
 ## Purpose
 
-Executes testing workflows autonomously to verify build quality, performance, accessibility, and deployment readiness for Docusaurus documentation sites.
+Executes testing workflows autonomously to verify build quality, test suite health, API endpoint correctness, and deployment readiness. Supports Python/FastAPI backends, Node.js/Docusaurus frontends, and hybrid deployments.
 
 ## Capabilities
 
-### Pre-Deployment Testing
-- Build verification (`npm run build`)
-- Content validation (check for responsive issues)
-- Static accessibility checks
-- Configuration validation
-- Automated reporting
+### Python/FastAPI Backend Testing
+- Test suite execution (`pytest tests/`)
+- Import and syntax validation (`py_compile`)
+- API endpoint health checks (health, docs, openapi.json)
+- Dependency conflict detection
+- Response schema validation
 
-### Post-Deployment Testing
-- Site accessibility checks
+### Frontend Testing (Docusaurus/Next.js)
+- Build verification (`npm run build`)
+- Content validation (responsive issues, broken links)
+- Static accessibility checks
 - Lighthouse performance audits (if CLI available)
-- Content verification
-- HTTPS validation
-- Deployment workflow status
+
+### Deployment Verification
+- Render.com API health checks
+- GitHub Pages content validation
+- Vercel deployment status
+- CORS cross-origin testing
+- HTTPS verification
 
 ## Quick Usage
 
-### Build Verification
+### Backend Test Suite
 ```
-"Validate the build before I deploy"
-"Check if the site builds without errors"
+"Run full test suite for the Stock Signal API"
+"Validate the Python backend"
 ```
 
 **Agent will:**
-- Run `npm run build`
-- Check for errors/warnings
-- Verify all modules present
+- Run `pytest tests/ -q --tb=short`
+- Validate all modules import cleanly
+- Check key API endpoints
 - Create testing report
 
-### Full Validation
+### Deployment Smoke Test
 ```
-"Run full testing suite on https://assadsharif.github.io/Hackathon_01/"
-"Validate deployed site quality"
+"Verify the deployed API at https://backend-api-project-1-d2vu.onrender.com"
+"Check if the dashboard works on GitHub Pages"
 ```
 
 **Agent will:**
-- Check site accessibility
-- Run Lighthouse audits
-- Verify content present
-- Check deployment status
+- Check health endpoint
+- Verify docs accessible
+- Test CORS headers
+- Report pass/fail status
+
+### Hybrid Validation
+```
+"Validate both the API on Render and dashboard on GitHub Pages"
+```
+
+**Agent will:**
+- Test backend API health and endpoints
+- Test frontend page loads
+- Verify cross-origin API calls work
 - Generate comprehensive report
-
-### Accessibility Audit
-```
-"Check accessibility of the built site"
-"Validate WCAG compliance"
-```
-
-**Agent will:**
-- Check heading hierarchy
-- Verify image alt text
-- Check ARIA attributes
-- Verify focus management
-- Create accessibility report
 
 ## Output
 
 Agent creates `testing-results.md` with:
 - Overall pass/fail status
-- Build verification results
-- Performance scores (if Lighthouse available)
-- Accessibility findings
+- Test suite results (pass/fail counts)
+- Build/import verification
+- API endpoint response codes
 - Deployment status
 - Actionable recommendations
-
-## Example Report
-
-```markdown
-# Testing Results
-
-**Overall Status**: ✅ PASS
-
-## Build Verification
-✅ Build completed successfully
-✅ All 7 modules present
-✅ No errors or warnings
-
-## Performance (Lighthouse)
-Mobile: 96/100 ✅
-Desktop: 98/100 ✅
-Accessibility: 97/100 ✅
-
-## Recommendations
-- No critical issues found
-- Site ready for production
-```
 
 ## Safety
 
 **Will Do:**
-- ✅ Read files and configurations
-- ✅ Run build commands (read-only)
-- ✅ Execute Lighthouse audits
-- ✅ Create testing reports
+- Read files and configurations
+- Run test suites (pytest, npm test)
+- Execute build commands
+- Run HTTP checks (curl)
+- Create testing reports
 
 **Will NOT Do:**
-- ❌ Modify source code
-- ❌ Delete files
-- ❌ Commit changes (without approval)
-- ❌ Install/uninstall packages
+- Modify source code
+- Delete files
+- Commit changes (without approval)
+- Install/uninstall packages (without approval)
+- Start long-running servers (without approval)
 
 ## Requirements
 
 **Minimum:**
-- Node.js and npm (for builds)
 - Bash (for commands)
+- pytest (Python testing)
+- curl (HTTP checks)
 
 **Optional:**
-- Lighthouse CLI (for performance audits)
-- jq (for JSON parsing)
-- GitHub CLI (for workflow status)
-
-## Integration
-
-**With Testing Skill:**
-- Agent reads `.claude/skills/testing/SKILL.md` for procedures
-- Applies skill's success criteria
-- Uses skill's troubleshooting guidance
-
-**With Project:**
-- Reads `docusaurus.config.ts`
-- Reads `.github/workflows/deploy.yml`
-- Analyzes `build/` output
-- Creates reports in project root
+- Node.js/npm (frontend builds)
+- Lighthouse CLI (performance audits)
+- jq (JSON parsing)
 
 ## Version
 
-**Agent Version**: 1.0.0
+**Agent Version**: 2.0.0
 **Compatible With**:
-- Docusaurus 3.x
-- Node.js 18.x, 20.x
-- Lighthouse CLI 10.x+
+- Python 3.11+ / FastAPI 0.100+
+- pytest 7.x+
+- Node.js 18.x, 20.x (frontend)
+- Docusaurus 3.x (frontend)
+- Render.com, GitHub Pages, Vercel
 
 ---
 
 **Status**: Production Ready
-**Last Updated**: 2025-12-24
+**Last Updated**: 2026-02-15
