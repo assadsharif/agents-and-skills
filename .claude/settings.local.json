@@ -68,7 +68,9 @@
       "Bash(bash /mnt/c/Users/HomePC/Desktop/CODE/agents-and-skills/.specify/scripts/bash/create-phr.sh --title \"fix-high-severity-toolkit-issues\" --stage general --json)",
       "Bash(/mnt/c/Users/HomePC/Desktop/CODE/agents-and-skills/.venv/bin/pip install:*)",
       "Bash(/mnt/c/Users/HomePC/Desktop/CODE/agents-and-skills/.venv/bin/python3:*)",
-      "Bash(git mv:*)"
+      "Bash(git mv:*)",
+      "Bash(find:*)",
+      "Bash(bash -n:*)"
     ]
   },
   "enableAllProjectMcpServers": false,
