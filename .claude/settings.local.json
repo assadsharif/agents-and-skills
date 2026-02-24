@@ -70,10 +70,14 @@
       "Bash(/mnt/c/Users/HomePC/Desktop/CODE/agents-and-skills/.venv/bin/python3:*)",
       "Bash(git mv:*)",
       "Bash(find:*)",
-      "Bash(bash -n:*)"
+      "Bash(bash -n:*)",
+      "Bash(curl -LsSf https://astral.sh/uv/install.sh | sh)",
+      "Bash(~/.local/bin/uv --version)",
+      "Bash(~/.local/bin/uv venv .venv && ~/.local/bin/uv pip install -r requirements.txt --python .venv/bin/python)",
+      "Bash(~/.local/bin/uv pip install -r requirements.txt --python .venv/bin/python)"
     ]
   },
-  "enableAllProjectMcpServers": false,
+  "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "tdd_mcp",
     "docker_containerization_mcp",
